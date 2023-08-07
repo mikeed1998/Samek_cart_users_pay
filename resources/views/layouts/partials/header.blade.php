@@ -149,14 +149,14 @@
 					<a href="#" class="dropdown-toggle fs-3 fw-normal" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none; color: #00AD61;">USUARIO</a>
 					@if (Auth::check())
 					<ul class="dropdown-menu" style="list-style-type: none; padding-left: 0;">
-						<li class="dropdown-item"><a href="{{ route('user.profile') }}">Perfil</a></li>
+						<li class="dropdown-item fs-4"><a href="{{ route('user.profile') }}" style="text-decoration: none; color: #00AD61;">Perfil</a></li>
 						<li><hr class="dropdown-divider"></li>
-						<li class="dropdown-item"><a href="{{ route('user.logout') }}">Salir</a></li>
+						<li class="dropdown-item fs-4"><a href="{{ route('user.logout') }}" style="text-decoration: none; color: #00AD61;">Salir</a></li>
 					</ul>
 					@else
 						<ul class="dropdown-menu" style="list-style-type: none; padding-left: 0;">
-							<li class="dropdown-item"><a href="{{ route('user.signup') }}">Registrarse</a></li>
-							<li class="dropdown-item"><a href="{{ route('user.signin') }}">Ingresar</a></li>
+							<li class="dropdown-item fs-4"><a href="{{ route('user.signup') }}" style="text-decoration: none; color: #00AD61;">Registrarse</a></li>
+							<li class="dropdown-item fs-4"><a href="{{ route('user.signin') }}" style="text-decoration: none; color: #00AD61;">Ingresar</a></li>
 						</ul>
 					@endif
 					
@@ -164,12 +164,12 @@
 
 				</li>
 				<li class="col-6 text-start" style="list-style-type: none; padding-left: 0;">
-					<a href="#">
+					<a href="{{ route('shoppingCart') }}">
 						<button type="button" class="btn btn-outline position-relative">
 							<div uk-icon="icon: cart; ratio: 1.6;"></div>
-							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-							  99+
-							</span>
+								<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}
+								</span>
 						</button>
 					</a>
 				</li>

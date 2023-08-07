@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Session;
 use App\User;
 use App\Domicilio;
 use App\Factura;
@@ -33,6 +34,12 @@ class UserController extends Controller
 
 		Auth::login($user);
 
+		if(Session::has('oldUrl')) {
+			$oldUrl = Session::get('oldUrl');
+			Session::forget('oldUrl');
+			return redirect()->to($oldUrl);
+		}
+
 		return redirect()->route('user.profile');
 	}
 
@@ -49,6 +56,12 @@ class UserController extends Controller
 		]);
 
 		if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+
+			if(Session::has('oldUrl')) {
+				$oldUrl = Session::get('oldUrl');
+				Session::forget('oldUrl');
+			}
+
 			return redirect()->route('user.profile');
 		}
 
@@ -57,13 +70,19 @@ class UserController extends Controller
 
 	public function getProfile() {
 		$data = Configuracion::first();
+		$orders = Auth::user()->orders;
 
-		return view('front.user.perfil', compact('data'));
+		$orders->transform(function($order, $key) {
+			$order->cart = unserialize($order->cart);
+			return $order;
+		});
+
+		return view('front.user.perfil', compact('data', 'orders'));
 	}
 
 	public function getLogout() {
 		Auth::logout();
-		return redirect()->back();
+		return redirect()->route('user.signin');
 	}
 
 

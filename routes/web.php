@@ -69,7 +69,7 @@ Route::namespace("Admin")->prefix('admin')->group(function(){
 	// });
 });
 
-// USUARIOS
+// USUARIOS (LOGIN REGISTER)
 Route::get('/signup', 'UserController@getSignup')->name('user.signup')->middleware('guest');
 Route::post('/signup', 'UserController@postSignup')->name('user.signup')->middleware('guest');
 Route::get('/signin', 'UserController@getSignin')->name('user.signin')->middleware('guest');
@@ -77,7 +77,13 @@ Route::post('/signin', 'UserController@postSignin')->name('user.signin')->middle
 Route::get('/perfil', 'UserController@getProfile')->name('user.profile')->middleware('auth');
 Route::get('/logout', 'UserController@getLogout')->name('user.logout')->middleware('auth');
 
+// CARRITO DE COMPRAS
+Route::get('/add-to-cart/{id}', 'CarritoController@getAddToCart')->name('addToCart');
+Route::get('/shopping-cart', 'CarritoController@getCart')->name('shoppingCart');
 
+// PASARELA DE PAGOS 
+Route::get('checkoutStripe', 'CarritoController@getCheckoutStripe')->name('checkoutStripe')->middleware('auth');
+Route::post('checkoutStripe', 'CarritoController@postCheckoutStripe')->name('checkoutStripe')->middleware('auth');
 
 
 
