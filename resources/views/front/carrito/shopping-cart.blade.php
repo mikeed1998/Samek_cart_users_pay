@@ -44,8 +44,8 @@
                     {{ $product['price'] }}
                 </div>
                 <div class="col-3 border">
-                    <a href="" class="btn btn-small bg-dark fs-5 text-white">Quitar uno</a>
-                    <a href="" class="btn btn-small bg-danger fs-5 text-white">Quitar todos</a>
+                    <a href="{{ route('reduceByOne', ['id' => $product['item']['id']]) }}" class="btn btn-small bg-dark fs-5 text-white">Quitar uno</a>
+                    <a href="{{ route('remove', ['id' => $product['item']['id']]) }}" class="btn btn-small bg-danger fs-5 text-white">Quitar todos</a>
                 </div>
             @endforeach
         </div>
@@ -92,7 +92,7 @@
 </div>
 @else
 <div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 fs-5">
+    <div class="col-sm-12 mt-5 mb-5 py-5 col-md-12 col-md-offset-3 col-sm-offset-3 fs-5 text-center">
         <h2>No tienes productos en el carrito</h2>
     </div>
 </div>

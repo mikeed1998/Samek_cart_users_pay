@@ -80,6 +80,8 @@ Route::get('/logout', 'UserController@getLogout')->name('user.logout')->middlewa
 // CARRITO DE COMPRAS
 Route::get('/add-to-cart/{id}', 'CarritoController@getAddToCart')->name('addToCart');
 Route::get('/shopping-cart', 'CarritoController@getCart')->name('shoppingCart');
+Route::get('/reduce/{id}', 'CarritoController@getReduceByOne')->name('reduceByOne');
+Route::get('/remove/{id}', 'CarritoController@getRemoveItem')->name('remove');
 
 // PASARELA DE PAGOS 
 Route::get('checkoutStripe', 'CarritoController@getCheckoutStripe')->name('checkoutStripe')->middleware('auth');

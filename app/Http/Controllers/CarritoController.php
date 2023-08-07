@@ -26,10 +26,38 @@ class CarritoController extends Controller
         return redirect()->route('front.tienda');
     }
 
+    public function getReduceByOne($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Carrito($oldCart);
+        $cart->reduceByOne($id);
+
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('shoppingCart');
+    }
+
+    public function getRemoveItem($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Carrito($oldCart);
+        $cart->removeItem($id);
+
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('shoppingCart');
+    }
+
     public function getCart() {
         $data = Configuracion::first();
         if(!Session::has('cart')) {
-            return view('front.carrito.shopping-cart', ['products' => null]);
+            return view('front.carrito.shopping-cart', ['products' => null, 'data' => $data]);
         }
 
         $oldCart = Session::get('cart');

@@ -27,7 +27,7 @@
     <hr class="border-bottom border-dark border-4">
     <div class="row">
         <div class="col-md-9 mx-auto col-md-offset-4">
-            <h2>Mi Historial de compras</h2>
+            <h2 class="fs-1 text-center">Historial de compras</h2>
 
             <div class="row">
                 @foreach ($orders as $order)
