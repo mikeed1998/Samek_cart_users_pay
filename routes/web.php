@@ -39,10 +39,17 @@ Route::name('front.')->group(function(){
 	
 	Route::get('productos/{product?}', 'FrontController@details')->name('details');
 
+	Route::get('/admin', 'FrontController@admin')->name('admin');
+	Route::post('/admin', 'FrontController@adminp')->name('adminp');
 });
 
+
+
+
+
+
 // rutas al admin
-Route::namespace("Admin")->prefix('admin')->group(function(){
+Route::namespace("Admin")->prefix('adnin')->group(function(){
 	Route::name('admin.')->group(function(){
 		Route::get('/', 'HomeController@index')->name('home');
 		Route::get('/nuevo', 'HomeController@create')->name('create');
@@ -68,27 +75,6 @@ Route::namespace("Admin")->prefix('admin')->group(function(){
 	// 	Route::get('index','ConfiguracionController@index')->name('index');
 	// });
 });
-
-// USUARIOS (LOGIN REGISTER)
-Route::get('/signup', 'UserController@getSignup')->name('user.signup')->middleware('guest');
-Route::post('/signup', 'UserController@postSignup')->name('user.signup')->middleware('guest');
-Route::get('/signin', 'UserController@getSignin')->name('user.signin')->middleware('guest');
-Route::post('/signin', 'UserController@postSignin')->name('user.signin')->middleware('guest');
-Route::get('/perfil', 'UserController@getProfile')->name('user.profile')->middleware('auth');
-Route::get('/logout', 'UserController@getLogout')->name('user.logout')->middleware('auth');
-
-// CARRITO DE COMPRAS
-Route::get('/add-to-cart/{id}', 'CarritoController@getAddToCart')->name('addToCart');
-Route::get('/shopping-cart', 'CarritoController@getCart')->name('shoppingCart');
-Route::get('/reduce/{id}', 'CarritoController@getReduceByOne')->name('reduceByOne');
-Route::get('/remove/{id}', 'CarritoController@getRemoveItem')->name('remove');
-
-// PASARELA DE PAGOS 
-Route::get('checkoutStripe', 'CarritoController@getCheckoutStripe')->name('checkoutStripe')->middleware('auth');
-Route::post('checkoutStripe', 'CarritoController@postCheckoutStripe')->name('checkoutStripe')->middleware('auth');
-
-
-
 
 
 // rutas al admin configuraciones
@@ -327,3 +313,23 @@ Route::prefix('clear')->group(function(){
 		return '<h1>Clear Config cleared</h1>';
 	});
 });
+
+
+// USUARIOS (LOGIN REGISTER)
+Route::get('/signup', 'UserController@getSignup')->name('user.signup')->middleware('guest');
+Route::post('/signup', 'UserController@postSignup')->name('user.signup')->middleware('guest');
+Route::get('/signin', 'UserController@getSignin')->name('user.signin')->middleware('guest');
+Route::post('/signin', 'UserController@postSignin')->name('user.signin')->middleware('guest');
+Route::get('/perfil', 'UserController@getProfile')->name('user.profile')->middleware('auth');
+Route::get('/logout', 'UserController@getLogout')->name('user.logout')->middleware('auth');
+
+// CARRITO DE COMPRAS
+Route::get('/add-to-cart/{id}', 'CarritoController@getAddToCart')->name('addToCart')->middleware('auth');
+Route::get('/shopping-cart', 'CarritoController@getCart')->name('shoppingCart')->middleware('auth');
+Route::get('/reduce/{id}', 'CarritoController@getReduceByOne')->name('reduceByOne')->middleware('auth');
+Route::get('/remove/{id}', 'CarritoController@getRemoveItem')->name('remove')->middleware('auth');
+
+// PASARELA DE PAGOS 
+Route::get('checkoutStripe', 'CarritoController@getCheckoutStripe')->name('checkoutStripe')->middleware('auth');
+Route::post('checkoutStripe', 'CarritoController@postCheckoutStripe')->name('checkoutStripe')->middleware('auth');
+

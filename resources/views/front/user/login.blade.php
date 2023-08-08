@@ -152,7 +152,7 @@
 								<div class="form-group mb-2">
 									<label for="email" class="text-md-right">{{ __('Correo') }}</label>
 									<div class="">
-										<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+										<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" style="box-shadow: none;" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
 										@error('email')
 										<span class="invalid-feedback" role="alert">
@@ -165,7 +165,7 @@
 								<div class="form-group">
 									<label for="password" class="text-md-right">{{ __('Contraseña') }}</label>
 									<div class="">
-										<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+										<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" style="box-shadow: none;" name="password" required autocomplete="current-password">
 										@error('password')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
 
 								<div class="form-group row mb-0">
 									<div class="d-flex justify-content-center text-center flex-column">
-										<button type="submit" class="btn btn-primary col-12 my-3" style="background: black; border-radius: 16px; border:none;">
+										<button type="submit" class="btn btn-primary col-12 my-3" style="background: #00AD61; border-radius: 16px; border:none;">
 											{{ __('Entrar') }}
 										</button>
 										@if (Route::has('password.request'))
@@ -189,7 +189,7 @@
 							</form>
 
 							<p class="card-text text-center">
-								<a href="{{ route('user.signup') }}" class="btn btn-sm btn-primary px-4 py-1" style="background: black; border-radius: 16px; border:none;">
+								<a href="{{ route('user.signup') }}" class="btn btn-sm btn-primary px-4 py-1" style="background: #00AD61; border-radius: 16px; border:none;">
 									{{ __('Regístrate aquí') }}
 								</a>
 							</p>

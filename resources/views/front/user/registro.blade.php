@@ -103,7 +103,7 @@
 						<div class="col-12 p-4 d-flex justify-content-center align-items-center flex-column text-center">
 							<h4 class="mb-5">Registrate</h4>
 							<div class="input_b col-12 col-md-10 col-lg-7 mb-3">
-							<input type="text" class="form-control @error('name') is-invalid @enderror" id="registrodeusuarios" name="name" placeholder="Nombre" style="border-radius:10px;" required autocomplete="name" autofocus required>
+							<input type="text" class="form-control @error('name') is-invalid @enderror" id="registrodeusuarios" name="name" placeholder="Nombre" style="border-radius:10px; box-shadow: none;" required autocomplete="name" autofocus required>
 							</div>
 							<div class="input_b col-12 col-md-10 col-lg-7 mb-3">
 								<input type="text" class="form-control @error('lastname') is-invalid @enderror" id="registrodeusuarios" name="lastname" placeholder="Apellido" style="border-radius:10px;" required autocomplete="lastname" autofocus required>
@@ -125,14 +125,14 @@
 							<p id="msj_error2" class="mb-0 mt-1" style="color:red; display:none;">La contraseña no coincide</p>
 							</div>
 							<div class="col-12 col-md-10 col-lg-7 mb-3 d-flex justify-content-center align-items-center flex-column">
-								<button type="submit" id="register_btn" class="col-12 btn btn-primary" style="border-radius:10px; background:black; border:none;" >Registrase</button>
+								<button type="submit" id="register_btn" class="col-12 btn btn-primary" style="border-radius:10px; background: #00AD61; border:none;" >Registrase</button>
 							</div>
 							<div class="col-12 col-md-10 col-lg-7 mb-3">
 								<p>Ya tengo cuenta. <a href="{{url('login')}}" class="" uk-toggle>Sign in</a></p>
 							</div>
 						</div>
 					</form>
-					<div class="col-12 col-md-5 d-flex justify-content-center align-items-center" style="background:black; border-top-right-radius: 26px; border-bottom-right-radius:26px;">
+					<div class="col-12 col-md-5 d-flex justify-content-center align-items-center" style="background:#00AD61; border-top-right-radius: 26px; border-bottom-right-radius:26px;">
 						<div class="col-12 p-4 d-flex justify-content-center align-items-center flex-column text-center">
 						<img src="{{asset('img/front/design/LogoBlanco.png')}}" class="mb-3" style="width:250px" alt="">	
 						<h6 class="mb-3" style="color:white;">Encantado de verte</h6>

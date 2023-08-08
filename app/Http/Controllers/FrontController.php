@@ -123,6 +123,23 @@ class FrontController extends Controller
 		return view('front.contacto', compact('data', 'elements'));
 	}
 
+	public function admin() {
+		$data = Configuracion::first();
+		return view('front.admin_fake', compact('data'));
+	}
+
+	public function adminp(Request $request) {
+		$data = Configuracion::first();
+
+		if($request->email == "admin@wozial.com") {
+			if($request->password == "wozial") {
+				return redirect()->route('config.index');
+			}
+		}
+
+		return view('front.admin_fake', compact('data'));
+	}
+
 
 	// public function servicios(Producto $serv){
 		

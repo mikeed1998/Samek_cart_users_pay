@@ -8,6 +8,7 @@
 @endsection
 
 @section('styleExtras')
+
 <style>
 
 	.slider-container {
@@ -385,7 +386,8 @@
 		<div class="col-11 mx-auto">
 			<div class="row">
 				
-				@foreach ($soluciones as $sol)
+				<div class="soluciones">
+					@foreach ($soluciones as $sol)
 					@if($sol->inicio == 1)
 					<div class="col-xxl-4 col-xl-4 col-lg-6 col-md-11 col-sm-11 col-xs-11 col-11 mx-auto py-5">
 						<div class="card cardo border carta px-2" style="
@@ -426,6 +428,7 @@
 					</div>
 					@endif
 				@endforeach
+				</div>
 
 			</div>
 		</div>
@@ -793,8 +796,8 @@
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     },
     {
