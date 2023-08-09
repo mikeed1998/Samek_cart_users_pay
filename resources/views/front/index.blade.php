@@ -160,7 +160,7 @@
 		}
 
 		.margen-dots-container {
-			margin-left: 1900px;
+			margin-left: 1600px;
 		}
 
 	}
@@ -410,7 +410,7 @@
 										</div>
 										<div class="row mt-2">
 											<div class="col-12 text-end">
-												<a href="#/">
+												<a href="{{ route('front.soluciones') }}">
 													<img src="{{ asset('img/design/mision.png') }}" alt="" class="img-fluid">
 												</a>
 											</div>
@@ -480,7 +480,7 @@
 											<div class="card-body py-5 d-flex align-items-center justify-content-center">
 												<div class="row mt-5">
 													<div class="col mt-5 d-flex align-items-center justify-content-center">
-														<a href="#/">
+														<a href="{{ route('addToCart', ['id' => $prod->id]) }}">
 															<img src="{{ asset('img/design/carrito2.png') }}" alt="" class="px-3">
 														</a>
 														<a href="{{ route('front.tienda_detalle', ['producto' => $prod->id]) }}">
@@ -671,8 +671,8 @@
 		slider.slick({
 			// Opciones del slider
 			arrows: false,
-			vertical: true,
-			verticalSwipping: true,
+			vertical: false,
+			verticalSwipping: false,
 		});
 
 		var dotsContainer = $('.slider-dots');

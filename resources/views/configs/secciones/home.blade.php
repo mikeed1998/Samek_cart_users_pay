@@ -818,8 +818,8 @@
 		slider.slick({
 			// Opciones del slider
 			arrows: false,
-			vertical: true,
-			verticalSwipping: true,
+			vertical: false,
+			verticalSwipping: false,
 		});
 
 		var dotsContainer = $('.slider-dots');
