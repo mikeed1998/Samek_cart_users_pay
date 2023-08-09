@@ -9,7 +9,7 @@
 @section('content')
 <div class="row mt-5 mb-5">
     <div class="col-sm-6 col-md-4 col-md-offset-4 mx-auto col-sm-offset-3">
-        <h1>Pasarela de pago (Stripe)</h1>
+        <h1>Finalizar pago</h1>
         <h4>Total de la compra: ${{ $total }}</h4>
         <div id="charge-error" class="alert alert-danger {{ !Session::has('error') ? 'hidden' : '' }}">
             {{ Session::get('error') }}
@@ -43,28 +43,29 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-4">
                             <div class="form-group">
                                 <label for="card-expiry-month">Mes de expiración</label>
                                 <input type="text" id="card-expiry-month" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-4">
                             <div class="form-group">
                                 <label for="card-expiry-year">Año de expiración</label>
                                 <input type="text" id="card-expiry-year" class="form-control" required>
                             </div>
                         </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="card-cvc">CCV</label>
+                                <input type="text" id="card-cvc" class="form-control" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="card-cvc">CCV</label>
-                        <input type="text" id="card-cvc" class="form-control" required>
-                    </div>
-                </div>
+                
             </div>
-            <button type="submit" class="btn btn-success">Finalizar la compra</button>
+            <button type="submit" class="btn btn-success mt-3">Finalizar la compra</button>
         </form>
     </div>
 </div>

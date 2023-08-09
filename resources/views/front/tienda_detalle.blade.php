@@ -296,15 +296,15 @@
                 </div>
                 <div class="row py-3">
                     <div class="col display-5 fw-normal text-dark">
-                        <div class="row py-3">
+                        {{-- <div class="row py-3">
                             <div class="col-xxl-5 col-xl-6 col-lg-5 col-md-5 col-sm-5 col-xs-5 col-5 mt-2">
                                 Cantidad: 
                             </div>
                             <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-4 mt-xxl-2 mt-xl-2 mt-lg-2 mt-md-1 mt-sm-1 mt-xs-1 mt-0 display-5">
                                 <input type="number" class="form-control" style="font-size: 32px;">
                             </div>
-                        </div>
-                        <div class="row py-3">
+                        </div> --}}
+                        <div class="row py-1">
                             <div class="col display-5 fw-normal">
                                 ${{ $producto->precio }}
                             </div>
@@ -313,7 +313,7 @@
                 </div>
                 <div class="row py-1">
                     <div class="col py-2">
-                        <a href="{{ route('addToCart', ['id' => $producto->id]) }}" class="btn btn-outline fs-3 text-white px-5" style="background-color: #00AD61; border-radius: 26px;">
+                        <a href="{{ route('addToCart', ['id' => $producto->id, 'pag' => 'detalle']) }}" class="btn btn-outline fs-3 text-white px-5" style="background-color: #00AD61; border-radius: 26px;">
                             A&Ntilde;ADIR <span uk-icon="icon: cart; ratio: 1.6;"></span>
                         </a>
                     </div>
@@ -374,7 +374,7 @@
                                             <div class="card-body py-5 d-flex align-items-center justify-content-center">
                                                 <div class="row mt-5">
                                                     <div class="col mt-5 d-flex align-items-center justify-content-center">
-                                                        <a href="#/">
+                                                        <a href="{{ route('addToCart', ['id' => $produ->id, 'pag' => 'detalle']) }}">
                                                             <img src="{{ asset('img/design/carrito2.png') }}" alt="" class="px-3">
                                                         </a>
                                                         <a href="{{ route('front.tienda_detalle', ['producto' => $produ->id]) }}">

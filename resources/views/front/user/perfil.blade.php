@@ -22,7 +22,7 @@
         <div class="col-12 fs-1 text-center">
             Mi perfil
         </div>
-        <div class="col-12 fs-2">Mis datos</div>
+        {{-- <div class="col-12 fs-2">Mis datos</div> --}}
     </div>
     <hr class="border-bottom border-dark border-4">
     <div class="row">

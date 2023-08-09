@@ -480,7 +480,7 @@
 											<div class="card-body py-5 d-flex align-items-center justify-content-center">
 												<div class="row mt-5">
 													<div class="col mt-5 d-flex align-items-center justify-content-center">
-														<a href="{{ route('addToCart', ['id' => $prod->id]) }}">
+														<a href="{{ route('addToCart', ['id' => $prod->id, 'pag' => 'inicio']) }}">
 															<img src="{{ asset('img/design/carrito2.png') }}" alt="" class="px-3">
 														</a>
 														<a href="{{ route('front.tienda_detalle', ['producto' => $prod->id]) }}">
