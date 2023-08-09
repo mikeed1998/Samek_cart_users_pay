@@ -23,6 +23,26 @@
             Mi perfil
         </div>
         {{-- <div class="col-12 fs-2">Mis datos</div> --}}
+        {{-- <div class="col-9 mx-auto py-5">
+            <div class="row">
+                <div class="col-3 fs-5">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control editarajax"  data-id="{{ $user->id }}" data-table="User" data-campo="name" value="{{ $user->name }}">
+                </div>
+                <div class="col-3 fs-5">
+                    <label for="">Apellidos</label>
+                    <input type="text" class="form-control editarajax"  data-id="{{ $user->id }}" data-table="User" data-campo="lastname" value="{{ $user->lastname }}">
+                </div>
+                <div class="col-3 fs-5">
+                    <label for="">Número de Telefono</label>
+                    <input type="text" class="form-control editarajax"  data-id="{{ $user->id }}" data-table="User" data-campo="telefono" value="{{ $user->telefono }}">
+                </div>
+                <div class="col-3 fs-5">
+                    <label for="">Nombre de Usuario</label>
+                    <input type="text" class="form-control editarajax"  data-id="{{ $user->id }}" data-table="User" data-campo="username" value="{{ $user->username }}">
+                </div>
+            </div>
+        </div> --}}
     </div>
     <hr class="border-bottom border-dark border-4">
     <div class="row">
@@ -57,6 +77,7 @@
                 </div>
                     <div class="col-12 text-start fs-4 fw-bolder">
                         Total pagado: ${{ $order->cart->totalPrice }}
+                        <p class="fw-normal">Fecha de la Compra: {{ $order->created_at->format('d/m/Y') }}</p>
                     </div>
                 @endforeach
             </div>

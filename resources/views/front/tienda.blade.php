@@ -137,7 +137,7 @@
 										background-position: center center;
 										background-repeat: no-repeat;
 										height: 360px;
-										width: 70%;
+										width: 100%;
 									"></div>
 									<div class="col-12 position-absolute top-0 bottom-0 start-0 px-2 producto">
 										<div class="card h-100" style="border-top-left-radius: 18px; border-top-right-radius: 18px;">

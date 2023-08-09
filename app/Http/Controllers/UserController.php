@@ -21,11 +21,15 @@ class UserController extends Controller
 
 	public function postSignup(Request $request) {
 		$this->validate($request, [
+			'name' => 'required',
+			'lastname' => 'required',
 			'email' => 'email|required|unique:users',
 			'password' => 'required|min:4'
 		]);
 
 		$user = new User([
+			'name' => $request->input('name'),
+			'lastname' => $request->input('lastname'),
 			'email' => $request->input('email'),
 			'password' => bcrypt($request->input('password'))
 		]);
@@ -71,13 +75,14 @@ class UserController extends Controller
 	public function getProfile() {
 		$data = Configuracion::first();
 		$orders = Auth::user()->orders;
+		$user = Auth::user();
 
 		$orders->transform(function($order, $key) {
 			$order->cart = unserialize($order->cart);
 			return $order;
 		});
 
-		return view('front.user.perfil', compact('data', 'orders'));
+		return view('front.user.perfil', compact('data', 'orders', 'user'));
 	}
 
 	public function getLogout() {

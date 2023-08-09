@@ -138,6 +138,8 @@ Route::prefix('admin')->group(function(){
 
 			Route::put('/switchHome/{modelo}/{tipo}','SeccionController@switchHome')->name('switchHome');
 
+			Route::get('ver_usuarios', 'SeccionController@verUsuarios')->name('ver_usuarios');
+
 			Route::post('/solucionesSide','SeccionController@solucionesSide')->name('solucionesSide');
 			Route::delete('/delSolucion/{solucion}','SeccionController@delSolucion')->name('delSolucion');
 

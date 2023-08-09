@@ -360,7 +360,7 @@
 									</div>
 									<div class="row mt-5">
 										<div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-9 col-xs-9 col-9 mx-auto text-white scroll-1" style="overflow: auto; max-height: 70px;">
-											<a href="#/" class="btn btn-outline text-white" style="background-color: #00AD61; border-radius: 32px;"><span class="fs-2 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-xs-3 px-3">TIENDA</span></a>
+											<a href="{{ route('front.tienda') }}" class="btn btn-outline text-white" style="background-color: #00AD61; border-radius: 32px;"><span class="fs-2 px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-3 px-xs-3 px-3">TIENDA</span></a>
 										</div>
 									</div>
 								</div>
@@ -409,7 +409,8 @@
 											</div>
 										</div>
 										<div class="row mt-2">
-											<div class="col-12 text-end">
+											<div class="col-9"></div>
+											<div class="col-3 text-end">
 												<a href="{{ route('front.soluciones') }}">
 													<img src="{{ asset('img/design/mision.png') }}" alt="" class="img-fluid">
 												</a>
@@ -473,7 +474,7 @@
 										background-position: center center;
 										background-repeat: no-repeat;
 										height: 360px;
-										width: 70%;
+										width: 100%;
 									"></div>
 									<div class="col-12 position-absolute top-0 bottom-0 start-0 px-2 producto">
 										<div class="card h-100" style="border-top-left-radius: 18px; border-top-right-radius: 18px;">

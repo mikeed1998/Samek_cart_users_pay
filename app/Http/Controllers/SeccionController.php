@@ -11,6 +11,9 @@ use App\SSliderPrincipal;
 use App\SSoluciones;
 use App\SCliente;
 use App\SProducto;
+use App\User;
+use App\SOrder;
+use Auth;
 use App\SGaleriaProducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -70,6 +73,15 @@ class SeccionController extends Controller
         $soluciones = SSoluciones::all();
         $clientes = SCliente::all();
         $galeria_producto = SGaleriaProducto::all();
+
+
+        // $orders = SOrder::all();
+		// $user = User::all();
+
+        // $orders->transform(function($order, $key) {
+		// 	$order->cart = unserialize($order->cart);
+		// 	return $order;
+		// });
         
         $ruta = 'configs.secciones.'.$seccion;
 
